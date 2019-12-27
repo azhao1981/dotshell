@@ -5,6 +5,10 @@ function psk {
 	cat $@ | awk '{print $2}' | xargs kill -9
 }
 
+function supsk {
+  cat $@ | awk '{print $2}' | xargs skill -9
+}
+
 # whichccmd psk
 function whichcmd {
 	which $1 || typeset -f $1
@@ -12,7 +16,7 @@ function whichcmd {
 
 # netstat
 alias ng="netstat -naptl | grep -v grep | grep"
-alias sng="sudo netstat -naptl | grep -v grep | grep"
+alias sung="sudo netstat -naptl | grep -v grep | grep"
 
 # docker
 alias dc="sudo docker-compose"
